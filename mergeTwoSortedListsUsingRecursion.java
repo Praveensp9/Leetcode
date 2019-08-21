@@ -10,7 +10,7 @@ class ListNode {
 
 public class mergeTwoSortedListsUsingRecursion {
 
-	//Iterative method
+	// Iterative Solution
 	private static ListNode mergeTwoSortedLists(ListNode l1,ListNode l2) {
 		
         ListNode empty = new ListNode(0);

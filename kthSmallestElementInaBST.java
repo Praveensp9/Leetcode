@@ -1,19 +1,23 @@
 package leetcode;
 
+import java.util.LinkedList;
 import java.util.*;
 
-class TreeNode{
-	
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int x){
-		this.val = x;
-	}
-	
-}
+
+
 
 public class kthSmallestElementInaBST {
+	
+	static class TreeNode{
+		
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode(int x){
+			this.val = x;
+		}
+		
+	}
 	
 	private static int kthsmallestIterative(TreeNode root,int k) {
 		 LinkedList<TreeNode> stack  = new LinkedList<TreeNode>();
