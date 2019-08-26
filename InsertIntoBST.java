@@ -37,6 +37,7 @@ public class InsertIntoBST {
 		if(root == null)
 			return new TreeNode(val);
 		
+		insert(root,val);
 		return root;
 	}
 	

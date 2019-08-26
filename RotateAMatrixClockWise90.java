@@ -22,12 +22,14 @@ public class RotateAMatrixClockWise90 {
         }
 	}
 	
+	
+	// My Solution of tranpose matrix
 	private static void rotate1(int[][] matrix) {
 		
 		int rows = matrix.length;
 		
 		for(int i=0;i<rows;i++) {
-			for(int j=i;j<matrix[i].length;j++) {
+			for(int j=i;j<matrix.length;j++) {
 				
 				int temp = matrix[i][j];
 				matrix[i][j] = matrix[j][i];
@@ -43,6 +45,7 @@ public class RotateAMatrixClockWise90 {
 				matrix[i][rows-1-j] = temp;
 			}
 		}
+		
 	}
 	
 	private static void print(int[][] matrix) {
@@ -60,9 +63,9 @@ public class RotateAMatrixClockWise90 {
 	public static void main(String[] args) {
 	
 		int[][] matrix = new int[][] {
-		                               {1,2,10},
-		                               {4,5,11},
-		                               {7,8,12}
+		                               {1,2,6,5},
+		                               {4,5,3,6},
+		                               {7,8,9,0}
 									  };
 
 		rotate1(matrix);
