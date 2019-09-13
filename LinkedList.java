@@ -15,7 +15,7 @@ public class LinkedList {
 	Node head;
 	
 	
-	private static LinkedList insert(LinkedList list,int val) {
+	public static LinkedList insert(LinkedList list,int val) {
 		
 		Node new_node = new Node(val);
 		new_node.next = null;
@@ -91,7 +91,7 @@ public class LinkedList {
 	}
 	
 	public static void main(String[] args) {
-		
+		 
 		LinkedList list = new LinkedList();
 		
 		list = insert(list,34);

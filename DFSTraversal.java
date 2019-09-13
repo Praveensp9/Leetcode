@@ -1,6 +1,6 @@
 package leetcode;
 
-public class DFSTraversal {
+public class DFSTraversal  {
 	
 	
 	// Recursive traversal of Depth First Search.
@@ -15,7 +15,6 @@ public class DFSTraversal {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		DFSIterativeApproach();
 		DFSRecursiveApproach();

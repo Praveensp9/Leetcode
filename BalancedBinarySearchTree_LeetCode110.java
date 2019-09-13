@@ -3,14 +3,14 @@ package leetcode;
 
 public class BalancedBinarySearchTree_LeetCode110 {
 	
-	static class TreeNode{
+	static class TreeNode{ 
 		
 		int val;
 		TreeNode left;
 		TreeNode right;
 		TreeNode(int x){
 			this.val = x;
-		}
+		} 
 	}
 	
 	private static int height_bst(TreeNode root) {

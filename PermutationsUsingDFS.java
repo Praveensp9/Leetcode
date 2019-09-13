@@ -32,6 +32,6 @@ public class PermutationsUsingDFS {
             n.add(i);
         List<Integer> c = new ArrayList<>();
 		permute(n,c,lst);
-	}
+	} 
 
 }

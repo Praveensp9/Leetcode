@@ -1,6 +1,6 @@
 package leetcode;
 
-public class BFSTraversal {
+public class BFSTraversal { 
 	
 	// Recursive traversal of Breadth First Search.
 	private static void BFSRecursiveApproach() {

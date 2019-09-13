@@ -31,7 +31,7 @@ public class NumberOfIslandsDFS {
 				if (y-1 >= 0 && grid[x][y-1] == '1' && !visited[x][y-1]) {
 					queue.offer(new int[]{x, y-1});
 					visited[x][y-1] = true;
-				}
+				} 
 
 				if (y+1 < cols && grid[x][y+1] == '1' && !visited[x][y+1]) {
 					queue.offer(new int[]{x, y+1});
