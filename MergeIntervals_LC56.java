@@ -11,13 +11,15 @@ public class MergeIntervals_LC56 {
 		
 		if(intervals.length == 0 || intervals == null)
 			return intervals;
-		Arrays.sort(intervals, new Comparator<int[]>(){
+//		Arrays.sort(intervals, new Comparator<int[]>(){
+//		
+//			public int compare(int[] x, int[] y) {
+//				return x[s] - y[s];
+//			}
+//		}		
+//		);
 		
-			public int compare(int[] x, int[] y) {
-				return x[s] - y[s];
-			}
-		}		
-		);
+		Arrays.sort(intervals,(a,b)-> a[s]-b[s]);
 		
 		int l=0;
 		for(int[] interval : intervals) {

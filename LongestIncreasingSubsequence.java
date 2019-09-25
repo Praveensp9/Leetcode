@@ -14,8 +14,10 @@ public class LongestIncreasingSubsequence {
 		for(int i=1;i<arr.length;i++) {
 			
 			for(int j=0;j<i;j++) {
-				
-				if(arr[j] < arr[i])
+				// Odd Increasing Subsequence : arr[j] < arr[i]  && arr[j]%2!=0 && arr[i]%2 !=0
+				// Odd Even Increasing Subsequnce : arr[j] < arr[i]  && (arr[i]+arr[j]) %2!=0
+				// Even Increasing Subsequence : arr[j] < arr[i]  && (arr[i]+arr[j]) %2==0
+				if(arr[j] < arr[i]  && (arr[i]+arr[j]) %2==0)
 					dp[i] = Math.max(dp[i],dp[j]+1);
 			}
 		}
@@ -24,7 +26,7 @@ public class LongestIncreasingSubsequence {
 	}
 
 	public static void main(String[] args) {
-			int[] arr = new int[] {10,9,2,5,3,7,101,18};
+			int[] arr = new int[] {1, 12, 2, 22, 5, 30, 31, 14, 17, 11};
 			int n =lis(arr);
 			System.out.println(n);
 	}

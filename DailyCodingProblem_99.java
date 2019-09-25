@@ -41,6 +41,7 @@ public class DailyCodingProblem_99 {
 		
 		int[] nums = new int[] {100,1,200,4,3,2};
 		int len = longest_consecutive_sequence(nums);
+		System.out.println(len);
 	}
 
 }

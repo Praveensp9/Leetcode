@@ -17,7 +17,7 @@ public class InvertABinaryTree {
 		
 	}
 	
-	
+	// Recursive Solution to Invert a Binary tree
 	private static TreeNode Invert(TreeNode root) {
 		
 		if(root == null)
@@ -42,7 +42,7 @@ public class InvertABinaryTree {
 			TreeNode temp = cur.left;
 			cur.left = cur.right;
 			cur.right = temp;
-			
+			 
 			if(cur.left != null)
 				queue.add(cur.left);
 			if(cur.right != null)

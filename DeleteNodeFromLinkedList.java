@@ -2,13 +2,12 @@ package leetcode;
 
 public class DeleteNodeFromLinkedList {
 
-	
 	private static void deleteNode(ListNode node) {
 		
-		ListNode cur = node;
+		ListNode cur = null;
 		
 		while(node.next != null) {
-			
+			 
 			node.val = node.next.val;
 			cur = node;
 			node = node.next;

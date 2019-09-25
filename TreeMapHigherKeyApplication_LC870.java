@@ -50,7 +50,7 @@ public class TreeMapHigherKeyApplication_LC870 {
 	}
 	public static void main(String[] args) {
 	
-		int[] res = shuffle(new int[] {2,7,13,15},new int[] {13,15,32,11});
+		int[] res = shuffle(new int[] {7,13,21,15},new int[] {13,15,32,11});
 		for(int i:res)
 			System.out.print(i+" ");
 	}

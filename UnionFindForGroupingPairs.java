@@ -63,10 +63,13 @@ public class UnionFindForGroupingPairs {
 					map.put(val,set);
 			}
 		}
-		
+		for(int i:uf.parent)
+			System.out.print(i + " , ");
+		System.out.println();
 		Map<Integer,List<Integer>> res = new HashMap<>();
 		for(Map.Entry<Integer,Integer> entry : map.entrySet()) {
 			int set = uf.find(entry.getValue());
+			System.out.println(set);
 			res.putIfAbsent(set, new ArrayList<>());
 			res.get(set).add(entry.getKey());
 		}
@@ -78,7 +81,7 @@ public class UnionFindForGroupingPairs {
 	
 
 	public static void main(String[] args) {
-		 int[][] pairs = {{1, 3}, {7, 10}, {5, 7}, {4, 1}};
+		 int[][] pairs = {{1, 3},{5, 7}, {4, 10},{4,1},{7, 10}};
 	     System.out.println(GroupPairs(pairs));
 	}
 

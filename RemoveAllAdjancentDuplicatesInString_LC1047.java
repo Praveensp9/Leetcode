@@ -30,7 +30,7 @@ public class RemoveAllAdjancentDuplicatesInString_LC1047 {
 	}
 
 	public static void main(String[] args) {
-		String str = "ddbacca";
+		String str = "ddbacaca";
 		String res = leetcode_1047(str);
 		
 		System.out.println(res);

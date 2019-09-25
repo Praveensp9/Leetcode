@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class NQueensProblemUsingBackTrack {
 
 	class Queen{
-		int row,col;
+		int row=0,col=0;
 		public Queen(int r,int c) {
 			this.row = r;
 			this.col = c;
@@ -64,7 +64,7 @@ public class NQueensProblemUsingBackTrack {
 	}
 	public static void main(String[] args) {
 		NQueensProblemUsingBackTrack nqueens = new NQueensProblemUsingBackTrack();
-		Queen[] queen = nqueens.solveNQueensProblem(4);
+		Queen[] queen = nqueens.solveNQueensProblem(3);
 		
 		Arrays.stream(queen).forEach(q -> System.out.println(q.row + " "+ q.col));
 		

@@ -27,10 +27,14 @@ public class UnionFindCycleInGraph_LC684 {
 			if(xp == yp)
 				return false;
 			
-			else if(rank[xp] < rank[yp])
+			else if(rank[xp] < rank[yp]) {
 				parent[xp] = yp;
-			else if(rank[xp] > rank[yp])
+				rank[yp]++;
+			}
+			else if(rank[xp] > rank[yp]) {
 				parent[yp] = xp;
+				rank[xp]++;
+			}
 			else
 			{
 				parent[yp] = xp;
@@ -62,8 +66,8 @@ public class UnionFindCycleInGraph_LC684 {
 	}
 	
 	public static void main(String[] args) {
-		
-		int[][] edges = new int[][] {{1,2},{1,3},{2,3}};
+
+		int[][] edges = new int[][] {{1,2},{2,3},{3,4},{1,5},{1,4}};
 		
 		int[] edge = CycleInTreeUF(edges);
 		System.out.println(edge[0] + " , " + edge[1]);

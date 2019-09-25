@@ -9,7 +9,7 @@ public class DailyCodingProblem_22 {
 	
 	private static List<String> problem22(List<String> lst, String str) {
 		
-		List<String> res = new ArrayList<>();
+		List<String> res = new ArrayList<>(); 
 		Set<String> words = lst.stream().collect(Collectors.toSet());
 //		
 //		StringBuilder sb = new StringBuilder();

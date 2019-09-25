@@ -26,8 +26,8 @@ public class MaximumSumSubArray_KadanesAlgorithm {
 		int sum = 0;
 		int max =0;
 		int currentStart = 0;
-		int maxStart = -1;
-        int maxEnd = -1;
+		int maxStart = 0;
+        int maxEnd = 0;
 		for(int i=0;i<arr.length;i++) {
 			sum = sum+arr[i];
 			
@@ -48,7 +48,7 @@ public class MaximumSumSubArray_KadanesAlgorithm {
 
 	public static void main(String[] args) {
 		
-		int[] arr  = new int[] {-2,1,3,1,-1,2,1,-5,4};
+		int[] arr  = new int[] {5,-10,3,2,5,-8,4};
 		System.out.println(dpMaxSubSum(arr));
 		System.out.println(maxSubSum(arr));
 	}

@@ -65,15 +65,15 @@ public class TrieTreesApplication_LCP {
 			if(curr.node.containsKey(c)) {
 				curr = curr.node.get(c);
 			}
-			else
-				return null;;
+//			else
+//				return null;
 		}
 		return curr;
 		
 	}
 	public static void main(String[] args) {
 			
-		String[] strs = new String[] {"abcdefg","abcxefg","abcrgth","abcd","praveen","computer","acdf","ab","sdfg"};
+		String[] strs = new String[] {"abcdefg","abcxefg","abc"};
 		String prefix = "abc";
 		String common = longestCommonPrefix(strs);
 		System.out.println(common);

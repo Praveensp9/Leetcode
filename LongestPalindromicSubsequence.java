@@ -28,7 +28,7 @@ public class LongestPalindromicSubsequence {
 	}
 	
 	public static void main(String[] args) {
-		int res = longestPalindromicSubsequence("babad");
+		int res = longestPalindromicSubsequence("agbdba");
 		System.out.println(res);
 
 	}

@@ -7,7 +7,7 @@ public class IsGraphBipartite_BFS_LC785 {
 	
 	
 	// Java BFS solution
-    private boolean isBipartite(int[][] graph) {
+    private static boolean isBipartite(int[][] graph) {
         if(graph == null || graph.length == 0)
             return true;
         int nodes  = graph.length;
@@ -41,7 +41,10 @@ public class IsGraphBipartite_BFS_LC785 {
     }
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[][] graph = new int[][] {{1,3},{0,2},{1,3},{0,2}};
+		boolean res = isBipartite(graph);
+		System.out.println(res);
+		
 
 	}
 

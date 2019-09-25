@@ -57,14 +57,14 @@ public class KnightTourProblem {
 				if(canPlaceKnight(nx,ny,tot+1,board,knight_moves_x,knight_moves_y))
 					return true;
 				else
-					board[nx][ny] = -1;
+					board[nx][ny] = -1; // Backtracking Stuff happens here
 			}
 		}
 	    return false; 
 	}
 
 	public static void main(String[] args) {
-		boolean res = KnightTour(0,0);
+		boolean res = KnightTour(0,4);
 		System.out.println();
 		if(res)
 			System.out.print("Solution Exists as shown in the above board");

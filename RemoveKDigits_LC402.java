@@ -20,12 +20,6 @@ public class RemoveKDigits_LC402 {
 	            }
 	            
 	        }
-	         
-//	        System.out.println(res.toString());
-//	        
-//	        System.out.println(res.length()-1);
-//	        
-//	        System.out.println(res.length());
 	        
 	        while(k-->0)
 	            res.delete(res.length()-1,res.length());

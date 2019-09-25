@@ -2,7 +2,49 @@ package leetcode;
 
 public class LongestPalindromicSubString {
 	
-	 private static boolean palindrome(String sub , int l,int r){
+	
+	// // T.C : O(n^2) - Dynamic Programming Force and S.C : O(n^2)
+	private static String longestPalindromicSubstringDP(String s) {
+		
+		int n = s.length();
+		boolean[][] dp = new boolean[n][n];
+		
+		for(int i=0;i<n;i++)
+			dp[i][i] = true;
+		
+		int start = 0;
+		int max = 0;
+		for(int i=0;i<n-1;i++) {
+			if(s.charAt(i) == s.charAt(i+1)) {
+				dp[i][i+1] = true;
+				start = i;
+				max = 2;
+			}
+		}
+		
+		
+		for(int k=3;k<=n;k++) {
+			
+			for(int i=0;i<n-k+1;i++) {
+				int j=i+k-1;
+				
+				if(s.charAt(i) == s.charAt(j) && dp[i+1][j-1]) {
+					dp[i][j] = true;
+					
+					if(max<k) {
+						max=k;
+						start=i;
+					}
+				}
+			}
+		}
+		
+		String palindrome = s.substring(start,start+max);
+		return palindrome;
+	}
+	
+	// T.C : O(n^3) - Brute Force and S.C : O(1)
+	private static boolean palindrome(String sub , int l,int r){
 	        
 	        while(l<=r){
 	            
@@ -45,8 +87,11 @@ public class LongestPalindromicSubString {
 	}
 
 	public static void main(String[] args) {
-		String res = longestPalindromicSubstring("babad");
+		String res = longestPalindromicSubstring("agbdba");
 		System.out.println(res);
+		
+		String res1 = longestPalindromicSubstringDP("agbdba");
+		System.out.println(res1);
 
 	}
 

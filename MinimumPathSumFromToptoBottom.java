@@ -2,6 +2,7 @@ package leetcode;
 
 public class MinimumPathSumFromToptoBottom {
 	
+	 // Leetcode 64
 	 private static int minPathSum(int[][] grid) {
 	        
 	        int sum = 0;
@@ -42,7 +43,8 @@ public class MinimumPathSumFromToptoBottom {
 		// TODO Auto-generated method stub
 
 		int[][] grid = new int[3][3];
-		minPathSum(grid);
+		int ans = minPathSum(grid);
+		System.out.print(ans);
 	}
 
 }

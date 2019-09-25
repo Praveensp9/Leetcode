@@ -1,9 +1,17 @@
 package leetcode;
 
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class DFS_LC459_RepeatedSubstring {
 	
 	private static boolean repeatedSubstringPattern(String s) {
+		Queue<Character> q = new LinkedList<>();
 		
+		// Another Solution 
+//		 String str = s + s;
+//	     return str.substring(1,str.length()-1).contains(s);
+	     
 		String prefix = "";
 		int n=s.length();
 		boolean found = false;
@@ -18,6 +26,8 @@ public class DFS_LC459_RepeatedSubstring {
 		}
 		return false;
 	}
+	
+	
 	
 	
 	private static boolean dfs(String str,String suf) {

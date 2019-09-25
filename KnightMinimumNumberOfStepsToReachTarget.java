@@ -7,7 +7,7 @@ public class KnightMinimumNumberOfStepsToReachTarget {
 
 	private static final int N=5;
 	private static final int a=0,b=0;
-	private static final int y=3,z=1;
+	private static final int y=4,z=4;
 	static class Cell{
 		int x;
 		int y;
@@ -25,8 +25,8 @@ public class KnightMinimumNumberOfStepsToReachTarget {
 	
 	private static int minStepsToReachTarget(int a,int b,int y,int z) {
 		
-		int[] dx = {1,1,-1,-1,2,2,-2,-2};
-	    int[] dy = {2,-2,2,-2,1,-1,1,-1};
+		int[] dx = {-2, -1, 1, 2, -2, -1, 1, 2};
+	    int[] dy = {-1, -2, -2, -1, 1, 2, 2, 1};
 	    
 	    Queue<Cell> q = new LinkedList<>();
 	    q.add(new Cell(a,b,0));
@@ -47,7 +47,7 @@ public class KnightMinimumNumberOfStepsToReachTarget {
 	    		int m = cell.x+dx[k];
 	    		int n = cell.y+dy[k];
 	    		
-	    		if(canMove(m,n)) {
+	    		if(canMove(m,n) && !visited[m][n]) {
 	    			visited[m][n] = true;
 	    			q.add(new Cell(m,n,cell.distance+1));
 	    		}

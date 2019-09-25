@@ -12,7 +12,6 @@ public class DailyCodingProblem_55 {
 	
 	private static String shorten(String longUrl) {
 		String shorturl="";
-		int cnt=0;
 		
 		// This loop is to ensure there are no duplicates in the Map
 		// containing the URL

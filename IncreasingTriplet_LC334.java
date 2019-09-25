@@ -9,6 +9,7 @@ public class IncreasingTriplet_LC334 {
 		
 		for(int i=0;i<nums.length;i++) {
 			int m=0;
+			
 			if(nums[i] > max) {
 				System.out.print("start" + m+ " ");
 				System.out.print("end :" + i+ " ");

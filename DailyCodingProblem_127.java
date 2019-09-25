@@ -7,7 +7,9 @@ import java.util.LinkedList;
 
 public class DailyCodingProblem_127 {
 	
-	private static LinkedList<Integer> linkedlistsum(LinkedList<Integer> lst1,LinkedList<Integer> lst2){
+	
+	// Simliar to Leetcode 2
+	private static LinkedList<Integer> linkedlistsum_LC2(LinkedList<Integer> lst1,LinkedList<Integer> lst2){
 		
 		LinkedList<Integer> root = new LinkedList<Integer>();
 		
@@ -19,7 +21,7 @@ public class DailyCodingProblem_127 {
 		int val = Integer.parseInt(sb.reverse().toString());
 		
 		Iterator<Integer> it1 = lst2.iterator();
-		sb = new StringBuilder();
+		sb = new StringBuilder(); 
 		while(it1.hasNext()) {
 			sb.append(it1.next());
 		}
@@ -38,7 +40,6 @@ public class DailyCodingProblem_127 {
 		return root;
 		
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -51,7 +52,7 @@ public class DailyCodingProblem_127 {
 		lst2.add(5);
 		lst2.add(8);
 		System.out.println("LinkedList 1: "+ lst2);
-		linkedlistsum(lst1,lst2);
+		linkedlistsum_LC2(lst1,lst2);
 
 	}
 
