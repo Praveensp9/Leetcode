@@ -25,7 +25,6 @@ public class LC85_MaximumRectangle {
 	             System.out.println();
 	            LC84_LargestAreaInAHistogram lc = new LC84_LargestAreaInAHistogram();
 	            int area = lc.largestRectangleArea(temp);
-	             System.out.println(area);
 	            if(max<area)
 	                max = area;
 	        }
@@ -34,7 +33,8 @@ public class LC85_MaximumRectangle {
 
 	public static void main(String[] args) {
 		
-		 int[][] input = new int[][]{{1,1,1,0},
+		 int[][] input = new int[][]{
+			     {1,1,1,0},
                  {1,1,1,1},
                  {0,1,1,0},
                  {0,1,1,1},

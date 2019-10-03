@@ -4,7 +4,7 @@ public class FindCelebrity {
 	private static int[][] celebrity = new int[][] {
 									 {0,0,0,1},
 									 {0,0,1,1},
-									 {0,1,1,1},
+									 {0,1,0,1},
 									 {0,0,0,0}
 									};
 
@@ -20,10 +20,12 @@ public class FindCelebrity {
 		}
 		
 		for(int i=0;i<n;i++) {
-			if(a!=i && (celebrity[a][i]==1 || celebrity[i][a] == 0))
+			
+			if(a!=i && (celebrity[a][i] == 1 || celebrity[i][a] == 0))
 				return -1;
 		}
 		return a;
+		
 	}
 	
 	public static void main(String[] args) {

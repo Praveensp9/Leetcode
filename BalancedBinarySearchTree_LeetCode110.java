@@ -4,7 +4,7 @@ package leetcode;
 public class BalancedBinarySearchTree_LeetCode110 {
 	
 	static class TreeNode{ 
-		
+		 
 		int val;
 		TreeNode left;
 		TreeNode right;

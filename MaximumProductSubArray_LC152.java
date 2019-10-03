@@ -21,8 +21,6 @@ public class MaximumProductSubArray_LC152 {
 				res = max;
 		}
 		
-		
-		
 		return res;
 	}
 

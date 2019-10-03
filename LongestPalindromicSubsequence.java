@@ -1,4 +1,4 @@
-package leetcode;
+ package leetcode;
 
 public class LongestPalindromicSubsequence {
 	

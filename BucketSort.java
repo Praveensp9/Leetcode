@@ -11,8 +11,8 @@ public class BucketSort {
 	
 	private static void bucketsort(int[] arr) {
 		int n=arr.length;
-		int M = 20; // (max - min)
-		int minVal = 2;
+		int M = 36; // (max - min)
+		int minVal = -1;
 		
 		// 1) Create n empty buckets  and initialize to Arraylist O(n)
 		List<Integer>[] lst = new ArrayList[n];

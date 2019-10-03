@@ -25,7 +25,7 @@ public class PermutationsUsingDFS {
 	
 
 	public static void main(String[] args) {
-		int[] nums = new int[] {1,2,3};
+		int[] nums = new int[] {1,2,3}; 
 		List<List<Integer>> lst = new ArrayList<>();
         List<Integer> n = new ArrayList<>();
         for(int i:nums)

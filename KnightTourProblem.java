@@ -64,7 +64,7 @@ public class KnightTourProblem {
 	}
 
 	public static void main(String[] args) {
-		boolean res = KnightTour(0,4);
+		boolean res = KnightTour(0,0);
 		System.out.println();
 		if(res)
 			System.out.print("Solution Exists as shown in the above board");

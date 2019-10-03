@@ -67,7 +67,7 @@ public class ConstructBinaryFromPreOrderAndInOrder {
 	        TreeNode root = new TreeNode(value);
 	        stack.push(root);
 	        
-	        for (int i = 1; i < preorder.length; i ++) {
+	        for (int i = 1; i < preorder.length; i++) {
 	            value = preorder[i];
 	            TreeNode node = new TreeNode(value);
 	            
@@ -87,7 +87,6 @@ public class ConstructBinaryFromPreOrderAndInOrder {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

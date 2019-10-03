@@ -19,7 +19,7 @@ public class CountingSort {
         
         for (int i:arr)  
             tmp[i - min]++; 
-  
+   
         for (int i = 1; i < tmp.length; i++)
             tmp[i] += tmp[i - 1];
   
@@ -73,7 +73,7 @@ public class CountingSort {
 
 	public static void main(String[] args) {
 		
-		
+	
 		Scanner sc = new Scanner(System.in);
 		int[] arr1 = new int[] {1,9,2,3,5,5,12,10};
 		int[] res= coutingsort(arr1);

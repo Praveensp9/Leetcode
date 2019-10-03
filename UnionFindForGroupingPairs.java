@@ -81,7 +81,7 @@ public class UnionFindForGroupingPairs {
 	
 
 	public static void main(String[] args) {
-		 int[][] pairs = {{1, 3},{5, 7}, {4, 10},{4,1},{7, 10}};
+		 int[][] pairs = {{1, 3},{5, 7},{4,1},{7, 10}};
 	     System.out.println(GroupPairs(pairs));
 	}
 

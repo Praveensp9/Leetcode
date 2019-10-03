@@ -37,7 +37,7 @@ public class RatInMaze {
 					return true;
 			
 			sol[a][b] = 0;
-			return false;
+//			return false;
 		}
 	
 		return false;

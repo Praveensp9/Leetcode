@@ -82,7 +82,7 @@ public class mergesort {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int[] arr = new int[] {12, 11, 13, 5, 6, 7}; 
+		int[] arr = new int[] {18,33,45,1,12,45,4,2,3}; 
 		merge_sort(arr,0,arr.length-1);
 		printarray(arr);
 		

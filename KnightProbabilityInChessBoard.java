@@ -39,7 +39,7 @@ public class KnightProbabilityInChessBoard {
 	}
 
 	public static void main(String[] args) {
-		double ans = knightProbability(3,2,1,1);
+		double ans = knightProbability(5,2,1,1);
 		System.out.println(ans);
 	}
 
