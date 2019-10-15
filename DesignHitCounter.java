@@ -1,7 +1,9 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class DesignHitCounter {
 	private  static List<Integer> hits = new ArrayList<Integer>();
@@ -32,6 +34,18 @@ public class DesignHitCounter {
 	
 	}
 	
+	Queue<Integer> q = new LinkedList<>();
+	private  void hitsq(int t) {
+		q.add(t);
+	}
+	
+	private int getHitsq(int t) {
+		while(!q.isEmpty() && (t-q.peek() >=300)){
+			q.remove();
+		}
+		return q.size();
+	}
+	
 	
 	
 	private static void printHits(int time, int hits) {
@@ -46,9 +60,17 @@ public class DesignHitCounter {
 		counter.hits(2);
 		counter.hits(3);
 		counter.hits(4);
-		counter.hits(381);
-		int hits = counter.getHits(623);
-		printHits(4,hits);
+		counter.hits(301);
+		int hits = counter.getHits(301);
+		printHits(301,hits);
+		
+		counter.hitsq(1);
+		counter.hitsq(2);
+		counter.hitsq(3);
+		counter.hitsq(4);
+		counter.hitsq(301);
+		int h = counter.getHitsq(301);
+		printHits(301,h);
 		
 
 	}

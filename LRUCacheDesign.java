@@ -33,18 +33,8 @@ public class LRUCacheDesign {
 		}
 		else {
 			
-			int index = 0;
-			int i = 0;
-			Iterator<Integer> itr = lru.iterator();
-			
-			while(itr.hasNext()) {
-				if(itr.next() == x) {
-					index = i;
-					break;
-				}
-				i++;
-			}
-			lru.remove(index);
+			lru.remove(x);
+			set.remove(x);			
 			
 		}
 		
@@ -65,19 +55,25 @@ public class LRUCacheDesign {
 	
 
 	public static void main(String[] args) {
-		LRUCacheDesign lru = new LRUCacheDesign(3);
-		lru.pageFaults(1);
-		lru.display();
-		lru.pageFaults(2);
-		lru.display();
-		lru.pageFaults(3);
-		lru.display();
-		lru.pageFaults(6);
-		lru.display();
-		lru.pageFaults(3);
-		lru.display();
-		lru.pageFaults(5);
-		lru.display();
+		LRUCacheDesign cache = new LRUCacheDesign(4);
+		cache.pageFaults(1);
+		cache.display();
+		cache.pageFaults(2);
+		cache.display();
+		cache.pageFaults(4);
+		cache.display();
+		cache.pageFaults(6);
+		cache.display();
+		cache.pageFaults(4);
+		cache.display();
+		cache.pageFaults(5);
+		cache.display();
+		cache.pageFaults(5);
+		cache.display();
+		cache.pageFaults(7);
+		cache.display();
+		cache.pageFaults(5);
+		cache.display();
 		
 	}
 

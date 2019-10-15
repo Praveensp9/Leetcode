@@ -37,7 +37,7 @@ public class MergeIntervals_LC56 {
 
 	public static void main(String[] args) {
 		
-		int[][] intervals = new int[][] {{15,18},{2,3},{4,8},{1,5},{8,10}};
+		int[][] intervals = new int[][] {{1,3},{2,6},{8,10},{15,18}};
 		
 		intervals = merge(intervals);
 	        

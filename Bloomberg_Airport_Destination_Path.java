@@ -14,24 +14,6 @@ class AirNode {
 		this.airport = airport;
 		outgoing = new HashSet<AirNode>();
 	}
-
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (this == obj) {
-			return true;
-		}
-		if (obj instanceof AirNode) {
-			AirNode node = (AirNode) obj;
-			return this.airport.equals(node.airport);
-		}
-		return false;
-	}
-
-	public int hashCode() {
-		return this.airport.hashCode();
-	}
 }
 
 public class Bloomberg_Airport_Destination_Path {
