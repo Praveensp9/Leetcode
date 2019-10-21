@@ -75,8 +75,6 @@ public class NumberOfIslandsDFS {
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
                 
-                //System.out.print(grid[i][j] + " , ");
-                //System.out.println(visited[i][j]+ " :" + i + " : " + j);
                 if(grid[i][j] == '1' && !visited[i][j]){
 
                 	islandsUsingDFS(grid,visited,i,j);

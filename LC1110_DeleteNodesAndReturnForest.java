@@ -16,7 +16,6 @@ public class LC1110_DeleteNodesAndReturnForest {
 	}
 	
 	private static List<TreeNode> deleteNodeReturnForest(TreeNode root,int[] delete){
-		
 		return null;
 	}
 

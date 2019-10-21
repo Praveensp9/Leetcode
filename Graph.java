@@ -79,7 +79,6 @@ public class Graph {
 				topologicalSortUtil(i,visited,stk);
 			}
 		}
-		
 		List<Integer> res= new ArrayList<>();
 		while(!stk.isEmpty())
 			res.add(stk.pop());
@@ -87,35 +86,30 @@ public class Graph {
 	}
 	private boolean isCyclicUtil(int i, boolean[] visited,boolean[] recStack)  
 	{ 
-	
-		// Mark the current node as visited and 
-		// part of recursion stack 
 		if (recStack[i]) 
-		return true; 
+			return true; 
 		
 		if (visited[i]) 
-		return false; 
+			return false; 
 		
 		visited[i] = true; 
+		recStack[i] = true;
 		
-		recStack[i] = true; 
 		List<Integer> children = adjList[i]; 
 		
 		for (Integer c: children) 
-		if (isCyclicUtil(c, visited, recStack)) 
-		return true; 
+			if (isCyclicUtil(c, visited, recStack)) 
+				return true; 
 		
 		recStack[i] = false; 
 		
 		return false; 
 	} 
 	public boolean isCyclic(){
-		 boolean[] visited = new boolean[v]; 
+		    boolean[] visited = new boolean[v]; 
 	        boolean[] recStack = new boolean[v]; 
 	          
-	          
-	        // Call the recursive helper function to 
-	        // detect cycle in different DFS trees 
+	   
 	        for (int i = 0; i < v; i++) 
 	            if (isCyclicUtil(i, visited, recStack)) 
 	                return true; 
@@ -123,19 +117,37 @@ public class Graph {
 	        return false; 
 	}
 
+	private void inAndOutDegree() {
+		int in[] = new int[v];
+		int out[] = new int[v];
+		
+		for(int i=0;i<adjList.length;i++) {
+			
+			ArrayList<Integer> lst = adjList[i];
+			out[i] = lst.size();
+			for(int j=0;j<lst.size();j++)
+				in[lst.get(j)]++;
+		}
+		
+		for (int k = 0; k < v; k++) { 
+            System.out.println(k + "\t" + in[k] + "\t" + out[k]); 
+        } 
+	}
 	public static void main(String[] args) {
 		
 		Graph g = new Graph(6);
-		g.addEdge(5,0);
-		g.addEdge(4,0);
-		g.addEdge(5,2);
-		g.addEdge(3,1);
-		g.addEdge(2,3);
-		g.addEdge(4,1);
+		g.addEdge(0, 1); 
+	    g.addEdge(0, 2); 
+	    g.addEdge(0, 3); 
+	    g.addEdge(2, 0); 
+	    g.addEdge(2, 1); 
+	    g.addEdge(1, 3); 
 		
 		int s = 2,d=3;
 		System.out.println("All paths from "+s+" to "+d);
 		g.printAllPaths(s, d);
+		g.inAndOutDegree();
+		
 		
 		
 		Graph g1 = new Graph(4);

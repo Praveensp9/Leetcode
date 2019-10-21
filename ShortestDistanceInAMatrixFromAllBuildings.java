@@ -35,12 +35,6 @@ public class ShortestDistanceInAMatrixFromAllBuildings {
                 }
 
         while(!Q.isEmpty()) {
-//        	 for(int i = 0; i < W; i++) {
-//                 for(int j = 0; j < H; j++)
-//                	 System.out.print(dist[i][j] + " ");
-//        	 	 System.out.println();
-//        	 }
-//        	 System.out.println();
             int x = Q.peek().first;
             int y = Q.peek().second;
             maxDist = Math.max(maxDist, dist[x][y]);
@@ -83,7 +77,7 @@ public class ShortestDistanceInAMatrixFromAllBuildings {
                 grid[i][j] = 0;
                 int val = solve(left-1, W, H,i,j+1,grid);
                 minDistance = Math.min(minDistance, val);
-                // Remove the building
+                //Remove the building
                 grid[i][j] = -1;
             }
         }

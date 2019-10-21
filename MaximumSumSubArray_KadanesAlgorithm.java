@@ -23,16 +23,16 @@ public class MaximumSumSubArray_KadanesAlgorithm {
 	private static int maxSubSum(int[] arr) {
 		
 		
-		int sum = 0;
-		int max =0;
+		int sum = arr[0];
+		int max =arr[0];
 		int currentStart = 0;
 		int maxStart = 0;
         int maxEnd = 0;
-		for(int i=0;i<arr.length;i++) {
+		for(int i=1;i<arr.length;i++) {
 			sum = sum+arr[i];
 			
-			if(sum<0) {
-				sum=0;
+			if(sum<arr[i]) {
+				sum=arr[i];
 				currentStart = i+1;
 			}
 			if(max<sum) {
@@ -48,7 +48,7 @@ public class MaximumSumSubArray_KadanesAlgorithm {
 
 	public static void main(String[] args) {
 		
-		int[] arr  = new int[] {5,-10,3,2,5,-8,4};
+		int[] arr  = new int[] {-5,-10,3,2,-5,-8,-4};
 		System.out.println(dpMaxSubSum(arr));
 		System.out.println(maxSubSum(arr));
 	}
