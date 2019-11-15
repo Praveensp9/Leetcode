@@ -32,6 +32,7 @@ public class Bloomberg_Airport_Destination_Path {
 
 	public static Vector<String> findPath(Vector<String> airports) {
 		Map<String, AirNode> nodes = new HashMap<String, AirNode>();
+		
 		// construct graph
 		for (int i = 0; i < airports.size(); i += 2) {
 			String from = airports.get(i);
@@ -46,6 +47,7 @@ public class Bloomberg_Airport_Destination_Path {
 		}
 		Vector<String> result = new Vector<String>();
 		HashSet<String> visited = new HashSet<String>();
+		
 		//start the dfs on graph
 		for (AirNode node : nodes.values()) {
 			dfs(node, visited, result);

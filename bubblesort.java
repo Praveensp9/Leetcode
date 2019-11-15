@@ -34,10 +34,10 @@ public class bubblesort {
 	}
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		 Scanner sc = new Scanner(System.in);
 		//Scanner sc = new Scanner(new StringReader(input));
 		
-		int[] arr = new int[] {64,25,12,22,11};
+		int[] arr = new int[] {1,25,126,228,1199};
 		bubble_sort(arr);
 		printarray(arr);
 

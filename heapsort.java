@@ -18,7 +18,7 @@ public class heapsort {
 		for(int i:arr)
 			maxheap.add(i);
 		
-		int k=0;
+		int k=0; 
 		
 		for(int i=0;i<arr.length;i++) {
 			if(!maxheap.isEmpty())

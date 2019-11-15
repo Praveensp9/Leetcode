@@ -24,7 +24,7 @@ public class DeleteNodeFromBinarySearchTree {
 		}
 		
 		parent.left= root.right;
-		return parent;
+		return root;
 	}
 	
 	private static TreeNode deleteNode(TreeNode root,int val) {

@@ -43,8 +43,7 @@ public class PostOrderTraversal {
 			visited.add(cur);
 			
 		}
-		return lst;
-		
+		return lst;	
 	}
 
 	public static void main(String[] args) {

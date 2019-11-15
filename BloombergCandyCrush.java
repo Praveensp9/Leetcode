@@ -83,7 +83,6 @@ public class BloombergCandyCrush {
     
     
     private static String solve(String input) {
-    	 //String input = (new Scanner(System.in)).nextLine();
     		
     		int i=0;
     	    while(i<input.length()) {

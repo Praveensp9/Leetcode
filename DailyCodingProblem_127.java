@@ -40,6 +40,40 @@ public class DailyCodingProblem_127 {
 		return root;
 		
 	}
+	
+	
+	private static ListNode linkedlistsum(ListNode lst1,ListNode lst2){
+		
+		ListNode head = new ListNode(0);
+		ListNode curr = head;
+		
+		ListNode p = lst1;
+		ListNode q = lst2;
+		int carry = 0;
+		
+		while(p!=null && q!=null) {
+		
+			int a = p!=null ? p.val : 0;
+			int b = q!=null ? q.val : 0;
+			
+			int sum = a+b+carry;
+			carry = sum/10;
+			curr.next = new ListNode(sum%10);
+			curr = curr.next;
+			if(p!=null)
+				p=p.next;
+			if(q!=null)
+				q=q.next;
+			
+		}
+		
+		if(carry>0)
+		{
+			curr.next = new ListNode(carry);
+		}
+		return head;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -53,6 +87,8 @@ public class DailyCodingProblem_127 {
 		lst2.add(8);
 		System.out.println("LinkedList 1: "+ lst2);
 		linkedlistsum_LC2(lst1,lst2);
+		
+		//System.out.println(linkedlistsum(lst1,lst2));
 
 	}
 

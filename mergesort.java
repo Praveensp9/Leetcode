@@ -61,7 +61,7 @@ public class mergesort {
 		
 		if(l<r) {
 			
-			int m = (l+r)/2;
+			int m = l+ (r-l)/2;
 			
 			merge_sort(arr,l,m);
 			merge_sort(arr,m+1,r);

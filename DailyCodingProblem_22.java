@@ -11,23 +11,6 @@ public class DailyCodingProblem_22 {
 		
 		List<String> res = new ArrayList<>(); 
 		Set<String> words = lst.stream().collect(Collectors.toSet());
-//		
-//		StringBuilder sb = new StringBuilder();
-//		for(int i=0;i<str.length();i++) {
-//			
-//			sb.append(str.charAt(i));
-//			String s = sb.toString();
-//			if(words.contains(s)) {
-//				//System.out.println(s);
-//				res.add(s);
-//				words.remove(s);
-//				sb = new StringBuilder();
-//				i=0;
-//			}
-//			
-//		}
-//		
-//			
 		res = splitWords(words,str);
 		return res;
 		
@@ -62,13 +45,13 @@ public class DailyCodingProblem_22 {
 	public static void main(String[] args) {
 			
 			List<String> lst = new ArrayList<>(); 
-			lst.add("a");
-			lst.add("aa");
-			lst.add("aaa");
-			lst.add("aaa");
-			lst.add("aaaaa");
+			lst.add("bed");
+			lst.add("bath");
+			lst.add("bedbath");
+			lst.add("beyond");
+			lst.add("and");
 					
-			String str = "aaaaab";
+			String str = "bedbathandbeyond";
 			List<String> ans = problem22(lst,str);
 			
 			Iterator<String> ite = ans == null ? null:  ans.iterator();
