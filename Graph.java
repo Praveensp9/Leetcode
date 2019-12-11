@@ -84,6 +84,7 @@ public class Graph {
 			res.add(stk.pop());
 		return res;
 	}
+	
 	private boolean isCyclicUtil(int i, boolean[] visited,boolean[] recStack)  
 	{ 
 		if (recStack[i]) 
@@ -155,9 +156,16 @@ public class Graph {
 		g1.addEdge(1,0);
 		g1.addEdge(2,0);
 		g1.addEdge(3,2);
+//		Graph g1 = new Graph(6);
+//		g1.addEdge(5, 0);
+//		g1.addEdge(4, 0);
+//		g1.addEdge(4, 1);
+//		g1.addEdge(2, 3);
+//		g1.addEdge(3, 1);
+//		g1.addEdge(5, 2);
 		System.out.println("Following is a Topological sort of the given graph");
 		List<Integer> res = g1.topologicalSort();
-		Collections.reverse(res);
+		//Collections.reverse(res);
 		for(int i:res)
 			System.out.print(i+" ");
 		

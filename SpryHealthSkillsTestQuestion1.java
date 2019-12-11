@@ -10,6 +10,7 @@
  *   	  java SpryHealthSkillsTestQuestion1 input.txt
  */
 
+package leetcode;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;

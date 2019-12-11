@@ -110,7 +110,7 @@ public class RemoveMinimalNumberParenthesis {
 		for(String s:res)
 			System.out.println(s);
 		
-		String s = singleStringParenthesis("(a)())()");
+		String s = singleStringParenthesis("(a()))()");
 		System.out.println("Single Answer:  "+s);
 	}
 

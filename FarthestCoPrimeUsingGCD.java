@@ -5,7 +5,6 @@ public class FarthestCoPrimeUsingGCD {
 	
 	private static int farthestCoprime(int a) {
 		
-		int b =0;
 		for(int i=2;i<250;i++) {
 			int g = gcd(a,i);
 			if(g == 1)

@@ -5,39 +5,37 @@ import java.util.Scanner;
 public class bubblesort {
 
 	private static int[] bubble_sort(int[] arr) {
-		
-		for(int i=0;i<arr.length -1;i++) {
-			
+
+		for (int i = 0; i < arr.length - 1; i++) {
+
 			boolean s = false;
-			for(int j=0;j<arr.length - i - 1 ;j++) {
-				
-				if(arr[j] > arr[j+1]) {
+			for (int j = 0; j < arr.length - i - 1; j++) {
+
+				if (arr[j] > arr[j + 1]) {
 					int t = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = t;
-					s= true;
+					arr[j] = arr[j + 1];
+					arr[j + 1] = t;
+					s = true;
 				}
-				
-			
 			}
-			if(s == false)
+			if (s == false)
 				break;
-			
+
 		}
 		return arr;
 	}
-	
+
 	private static void printarray(int[] arr) {
-		for(int i=0;i<arr.length;i++)
+		for (int i = 0; i < arr.length; i++)
 			System.out.print(arr[i] + " ");
 		System.out.println();
 	}
-	
+
 	public static void main(String[] args) {
-		 Scanner sc = new Scanner(System.in);
-		//Scanner sc = new Scanner(new StringReader(input));
-		
-		int[] arr = new int[] {1,25,126,228,1199};
+		Scanner sc = new Scanner(System.in);
+		// Scanner sc = new Scanner(new StringReader(input));
+
+		int[] arr = new int[] { 1, 25, 126, 228, 1199 };
 		bubble_sort(arr);
 		printarray(arr);
 

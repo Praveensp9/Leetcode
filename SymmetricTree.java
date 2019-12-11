@@ -4,15 +4,50 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 public class SymmetricTree {
-	static class TreeNode{ 
+
+	
+	private static class TreeNode{
 		
 		int val;
 		TreeNode left;
 		TreeNode right;
+		public TreeNode() {
+			
+		}
 		TreeNode(int x){
 			this.val = x;
-		} 
+		}
+		
 	}
+	
+	 /*function to insert element in binary tree */
+    private static void insert(TreeNode root, Integer key) 
+    { 
+    	TreeNode node = null;
+    	if(key != null)
+    		node = new TreeNode(key); 
+        Queue<TreeNode> q = new LinkedList<>(); 
+        q.add(root); 
+       
+        // Do level order traversal until we find 
+        // an empty place.  
+        while (!q.isEmpty()) { 
+            TreeNode temp = q.peek(); 
+            q.remove(); 
+       
+            if (temp.left == null) { 
+                temp.left = node;
+                break; 
+            } else
+                q.add(temp.left); 
+       
+            if (temp.right == null) { 
+                temp.right =  node;
+                break; 
+            } else
+                q.add(temp.right); 
+        }
+    } 
 	
 	// Iterative Solution
 	private static boolean helperIterative(TreeNode root) {
@@ -59,19 +94,14 @@ public class SymmetricTree {
 	}
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(1);
-		TreeNode two1  = new TreeNode(2);
-		TreeNode two2  = new TreeNode(2);
-		root.left = two1;
-		root.right = two2;
-		TreeNode three1  = new TreeNode(3);
-		TreeNode three2  = new TreeNode(4);
-		TreeNode four1  = new TreeNode(4);
-		TreeNode four2  = new TreeNode(3);
-		two1.left = three1;
-		two1.right = three2;
-		two2.left = four1;
-		two2.right = four2;
+		TreeNode root= new TreeNode(1);
+		
+		insert(root,2);
+		insert(root,2);
+		insert(root,3);
+		insert(root,4);
+		insert(root,4);
+		insert(root,3);
 		
 		boolean ans = Symmetric(root);
 		System.out.println(ans);

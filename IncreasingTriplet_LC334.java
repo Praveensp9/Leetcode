@@ -8,17 +8,11 @@ public class IncreasingTriplet_LC334 {
 		int max=Integer.MAX_VALUE;
 		
 		for(int i=0;i<nums.length;i++) {
-			int m=0;
-			
+
 			if(nums[i] > max) {
-				System.out.print("start" + m+ " ");
-				System.out.print("end :" + i+ " ");
 				return true;
 			}
 			else if(nums[i] <= min) {
-				
-				if(i>0 && nums[i] < nums[i-1])
-					m=i;
 				min = nums[i];
 				
 			}

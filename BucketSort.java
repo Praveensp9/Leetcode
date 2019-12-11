@@ -11,8 +11,12 @@ public class BucketSort {
 	
 	private static void bucketsort(int[] arr) {
 		int n=arr.length;
-		int M = 36; // (max - min)
-		int minVal = -1;
+		
+		int max = Arrays.stream(arr).max().getAsInt(); 
+	    int min = Arrays.stream(arr).min().getAsInt(); 
+	    
+		int M = max-min;
+		int minVal = -90;
 		
 		// 1) Create n empty buckets  and initialize to Arraylist O(n)
 		List<Integer>[] lst = new ArrayList[n];

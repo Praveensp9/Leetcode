@@ -23,8 +23,41 @@ public class PaintHouseIandII {
 	}
 	
 	// LeetCode Paint House 2
-	private static void paintHouseII() {
+	private static int paintHouseII(int[][] costs) {
 		
+		if(costs == null || costs.length == 0)
+            return 0;
+        
+        int total_house = costs.length;
+        
+        int min1 = 0;
+        int min2 = 0;
+        int index1 = -1;
+        
+        for(int i=0;i<total_house;i++){
+            int m1 = Integer.MAX_VALUE;
+            int m2 = Integer.MAX_VALUE;
+            int index = -1;
+            
+            for(int j=0;j<costs[0].length;j++){
+                
+                int cost = costs[i][j] + (j != index1 ? min1 : min2);
+                
+                if(cost<m1){
+                    m2=m1;
+                    m1= cost;
+                    index = j;
+                }
+                else if(cost<m2){
+                    m2=cost;
+                }
+            }
+            
+            min1 = m1;
+            min2 = m2;
+            index1 = index;
+        }
+        return min1;
 	}
 
 	public static void main(String[] args) {
@@ -33,11 +66,18 @@ public class PaintHouseIandII {
 									{14,2,10},
 									{1,4,5},
 									{20,9,18},
-									{11,2,9,5}
+									{11,2,9}
 								  };
 		int costs = paintHouseI(arr);
 		System.out.println(costs);
-		paintHouseII();
+		
+		
+		int[][] paint = new int[][] {
+			{1,3},
+			{2,4}
+		};
+		int cost = paintHouseII(paint);
+		System.out.println(cost);
 	}
 
 }

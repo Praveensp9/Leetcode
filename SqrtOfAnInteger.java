@@ -40,9 +40,11 @@ public class SqrtOfAnInteger {
 		
 	}
 	public static void main(String[] args) {
-		int x = 25;
+		int x = 14;
+		
 		int res = sqrtMethod(x);
 		System.out.println(res);
+		
 		int res1 = sqrt(x);
 		System.out.println(res1);
 	}

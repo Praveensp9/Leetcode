@@ -7,6 +7,7 @@ public class LeetCode_646 {
 	private static int MaximumLengthOfPairChain(int[][] pairs) {
 		
 		Arrays.sort(pairs, (a,b)->(a[1]-b[1]));
+		
 		int ans =0;
 		int cur = Integer.MIN_VALUE;
 		for(int[] pair:pairs) {

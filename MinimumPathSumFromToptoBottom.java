@@ -8,6 +8,7 @@ public class MinimumPathSumFromToptoBottom {
 	        int sum = 0;
 	        int row = grid.length;
 	        int col = grid[0].length;
+	        
 	        int res[][] = new int[row][col];
 	        
 	        res[0][0]=grid[0][0];

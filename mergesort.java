@@ -5,56 +5,29 @@ import java.util.Scanner;
 
 public class mergesort {
 	
-	private static void merge(int[] arr,int l,int m,int r) {
+	private static void merge(int[] nums,int start, int mi, int end) {
 		
-		int left =  m-l+1;
-		int right = r-m;
+		int lp = start;
+        int rp = mi + 1;
+        int[] buffer = new int[end-start+1];
+        int t = 0;
+        
+        while (lp <= mi && rp <= end){
+            if (nums[lp] < nums[rp]){
+                buffer[t++] = nums[lp++];
+            }else{
+                buffer[t++] = nums[rp++];
+            }
+        }
+        
+        while (lp <= mi) 
+            buffer[t++] = nums[lp++];
+        while (rp <= end) 
+            buffer[t++] = nums[rp++];
+        for (int i = start; i <= end; i++){
+            nums[i] = buffer[i-start];
+        }
 		
-		int[] l1 = new int[left];
-		int[] l2 = new int[right];
-		
-		
-		
-		//Arrays.copyOfRange(arr, l,m);
-		//Arrays.copyOfRange(arr, m,r);
-		
-		
-		  for (int i=0; i<left; i++) 
-			  l1[i] = arr[l + i]; 
-		  for (int j=0; j<right; j++)
-			  l2[j] = arr[m + 1 + j];
-		 
-		
-	    int i=0;
-		int j=0;
-		
-		int k=0;
-		while(i < left && j < right) {
-			
-			if(l1[i] <=l2[j]) {
-				arr[k] = l1[i];
-				i++;
-			}
-			else {
-				arr[k] = l2[j];
-				j++;
-			}
-			k++;
-			
-		}
-		
-		//System.out.println(k);
-		//System.out.println(i);
-		while(i< left) {
-			arr[k++] = l1[i++];
-		}
-		
-		//System.out.println(j);
-		while(j<right) {
-			arr[k++] = l2[j++];
-		}
-		
-		//return arr;
 	}
 	
 	private static void merge_sort(int[] arr,int l,int r) {
@@ -69,7 +42,7 @@ public class mergesort {
 			merge(arr,l,m,r);
 			
 		}
-		//return arr;
+	
 	}
 
 	private static void printarray(int[] arr) {
@@ -82,7 +55,7 @@ public class mergesort {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int[] arr = new int[] {18,33,45,1,12,45,4,2,3}; 
+		int[] arr = new int[] {18,33,45,1,12,-45,4,2,3}; 
 		merge_sort(arr,0,arr.length-1);
 		printarray(arr);
 		

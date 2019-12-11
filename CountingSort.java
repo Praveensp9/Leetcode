@@ -78,6 +78,7 @@ public class CountingSort {
 		int[] arr1 = new int[] {1,9,2,3,5,5,12,10};
 		int[] res= coutingsort(arr1);
 		printarray(res);
+		
 		int[] arr = new int[] {-5, -10, 0, -3, 8, 5, -1, 10};
 		int[] res1 = coutingsorthandlingnegativeelements(arr);
 		printarray(res1);

@@ -1,26 +1,57 @@
 package leetcode;
 
-
-
 public class SwapNodesInPairs_LC24 {
 	
-	
-	 public static class LinkedList {
-		     int val;
-		     LinkedList next;
-		     LinkedList(int x) { this.val = x; }
-	 }
+private static class ListNode{
+		
+		int val;
+		ListNode next;
+		public ListNode(int val) {
+			this.val = val;
+		}
+		public ListNode() {
+		
+		}
+		
+		public  ListNode insert(ListNode list,int val) {
+			
+			ListNode new_node = new ListNode(val);
+			new_node.next = null;
+			
+			if(list == null)
+				list = new_node;
+			else {
+				ListNode temp = list;
+				while(temp.next != null)
+					temp = temp.next;
+				temp.next = new_node;
+			}
+			
+			return list;
+		}
+		
+		private  void printlist(ListNode list){
+			ListNode node = list;
+	        System.out.println("LinkedList");
+	        
+	        while(node.next!=null){
+	            System.out.print(node.val+" -> ");
+	            node = node.next;
+	        }
+	        System.out.println(node.val);
+	    }
+	}	
 	 
 	 // Recursive Solution
 	 
-	 private static LinkedList SwapNodesRecursive(LinkedList head) {
+	 private static ListNode SwapNodesRecursive(ListNode head) {
 		 
 		 if(head == null || head.next == null)
 			 return head;
 		 
-		 LinkedList p1 = head;
-		 LinkedList p2 = head.next;
-		 LinkedList p3 = head.next.next;
+		 ListNode p1 = head;
+		 ListNode p2 = head.next;
+		 ListNode p3 = head.next.next;
 		 
 		 p2.next = p1;
 		 p1.next = p3;
@@ -30,16 +61,16 @@ public class SwapNodesInPairs_LC24 {
 		return p2;
 	 }
 	
-	private static LinkedList SwapNodes(LinkedList head) {
+	private static ListNode SwapNodes(ListNode head) {
 		
 		
 		if(head == null || head.next == null)
 			return head;
 		
-		LinkedList new_node = new LinkedList(0);
+		ListNode new_node = new ListNode(0);
 		new_node.next = head;
-		LinkedList prev = new_node;
-		LinkedList cur = head;
+		ListNode prev = new_node;
+		ListNode cur = head;
 		
 		while(prev.next != null && cur.next != null) {
 			
@@ -54,8 +85,20 @@ public class SwapNodesInPairs_LC24 {
 		
 	}
 
-	public static void main(String[] args) {
-
+	public static void main(String[] args) {			
+			ListNode list = new ListNode();
+			ListNode head = new ListNode(9);
+			head = list.insert(head, 7);
+			head = list.insert(head, 10);
+			head = list.insert(head, 1);
+			head = list.insert(head, 8);
+			
+			list.printlist(head);
+			
+			ListNode root = SwapNodes(head);
+			
+			list.printlist(root);
+			
 
 	}
 

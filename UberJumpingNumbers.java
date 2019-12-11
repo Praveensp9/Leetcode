@@ -47,15 +47,15 @@ public class UberJumpingNumbers {
 	}
 
 	public static void main(String[] args) {
-//		int N = 105;
-//		List<Integer> lst = jumpingNumbers(105);
-//		for(int i:lst)
-//			System.out.print(i+" ");
-		
 		int N = 105;
-		List<Integer> lst = jumpingNumbersBFS(105);
+		List<Integer> lst = jumpingNumbers(105);
 		for(int i:lst)
 			System.out.print(i+" ");
+		
+//		int N = 105;
+//		List<Integer> lst = jumpingNumbersBFS(105);
+//		for(int i:lst)
+//			System.out.print(i+" ");
 	}
 
 }

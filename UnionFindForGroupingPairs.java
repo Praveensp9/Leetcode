@@ -36,10 +36,14 @@ public class UnionFindForGroupingPairs {
 			
 			if(xp == yp)
 				return;
-			if(rank[xp] < rank[yp])
+			if(rank[xp] < rank[yp]) {
 				parent[xp] = yp;
-			else if(rank[xp] > rank[yp])
+				rank[yp]++;
+			}
+			else if(rank[xp] > rank[yp]) {
 				parent[yp] = xp;
+				rank[xp]++;
+			}
 			else
 			{
 				parent[yp] = xp;
@@ -55,32 +59,31 @@ public class UnionFindForGroupingPairs {
 		UnionFind uf = new UnionFind(n);
 		
 		Map<Integer,Integer> map = new HashMap<>();
+		
 		for(int set=0;set<n;set++) {
+			
 			for(int val:pairs[set]) {
 				if(map.containsKey(val))
 					uf.union(set, map.get(val));
 				else
 					map.put(val,set);
 			}
+			
 		}
-		for(int i:uf.parent)
-			System.out.print(i + " , ");
-		System.out.println();
+		
 		Map<Integer,List<Integer>> res = new HashMap<>();
 		for(Map.Entry<Integer,Integer> entry : map.entrySet()) {
 			int set = uf.find(entry.getValue());
-			System.out.println(set);
+			
 			res.putIfAbsent(set, new ArrayList<>());
 			res.get(set).add(entry.getKey());
 		}
 		
 		return new ArrayList<>(res.values());
 	}
-	
-	
-	
 
 	public static void main(String[] args) {
+		
 		 int[][] pairs = {{1,2},{3,4},{7,2},{5,12},{11,3},{9,7}};
 	     System.out.println(GroupPairs(pairs));
 	}

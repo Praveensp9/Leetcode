@@ -1,66 +1,26 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.LinkedList;
-import java.util.Stack;
 
-public class InOrderTraversal {
+public class LC366_FindLeavesOfBinaryTree {
 	
 	private static class TreeNode{
 		
 		int val;
 		TreeNode left;
 		TreeNode right;
-		
+		public TreeNode() {
+			
+		}
 		TreeNode(int x){
 			this.val = x;
 		}
 		
 	}
 	
-	// Recursive Solution 
-	private static void inorder(TreeNode root,List<Integer> lst){
-        if(root == null)
-            return;
-        inorder(root.left,lst);
-        lst.add(root.val);
-        inorder(root.right,lst);
-    }
-    
-    private static List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> lst=new ArrayList<>();
-        if(root == null)
-            return lst;
-        inorder(root,lst);
-        return lst;
-    }
-
-    private static List<Integer> inOrderIterative(TreeNode root){
-    	List<Integer> inorder=new ArrayList<>();
-    	Stack<TreeNode> stack = new Stack<>();
-    	if(root == null)
-    		return inorder;
-    	
-    	TreeNode cur = root;
-    	while(cur != null || !stack.isEmpty()) {
-    		
-    		while(cur != null) {
-    			stack.push(cur);
-    			cur = cur.left;
-    		}
-    		
-    		cur = stack.pop();
-    		inorder.add(cur.val);
-    		cur = cur.right;
-    		
-    	}
-
-    	return inorder;
-    }
-    
-
 	
 	 /*function to insert element in binary tree */
     private static void insert(TreeNode temp, int key) 
@@ -88,7 +48,6 @@ public class InOrderTraversal {
         }
     } 
     
-	
 	private static List<TreeNode> printTreeLevelWise(TreeNode root) {
 		
 		List<TreeNode> res = new LinkedList<>();
@@ -106,37 +65,60 @@ public class InOrderTraversal {
 			if(node.right != null)
 				queue.add(node.right);
 
-		}
-		
-		
+		}	
 		return res;
 	}
-
 	
+	 private static void findLeavesEnd(TreeNode root,TreeNode parent,List<Integer> list){
+	        if(root == null)
+	            return;
+	        if(root.left != null || root.right != null){
+	            findLeavesEnd(root.left,root,list);
+	            findLeavesEnd(root.right,root,list);
+	        }
+	        else{
+	            list.add(root.val);
+	            if(root == parent.left){
+	                parent.left = null;
+	            }
+	            else if(root == parent.right){
+	                parent.right= null;
+	            }
+	        }
+	    
+	    }
+		
+	private static List<List<Integer>> findLeaves(TreeNode root){
+		  List<List<Integer>> lists = new ArrayList<>();
+	        if(root == null)
+	            return lists;
+	        
+	        List<Integer> list = null;
+	        
+	        while(root!=null && (root.left != null || root.right != null)){
+	            list = new ArrayList<>();
+	            findLeavesEnd(root,null,list);
+	            lists.add(list);
+	        }
+	        
+	        // root append at last
+	        list = new ArrayList<>();
+	        list.add(root.val);
+	        lists.add(list);
+	        return lists;
+	}
 	
 	public static void main(String[] args) {
 		
-		TreeNode root= new TreeNode(9);
+		TreeNode root= new TreeNode(1);
 		
-		insert(root,5);
-		insert(root,16);
-		insert(root,4);
-		insert(root,13);
 		insert(root,2);
 		insert(root,3);
-		insert(root,7);
+		insert(root,4);
+		insert(root,5);
 		
-//	
-//		List<TreeNode> res = printTreeLevelWise(root);
-//		
-//		for(TreeNode i:res)
-//			System.out.print(i.val+" ");
-//		
-//		System.out.println();
-		
-		List<Integer> inorder= inorderTraversal(root);
-		for(int i:inorder)
-			System.out.print(i+" ");
+		List<List<Integer>>  res = findLeaves(root);
+		System.out.println(res);
 
 	}
 

@@ -48,7 +48,6 @@ class Solution {
 			Cell c = q.pollLast();
 			addNeighbours(gates,c.row,c.col,q);
 		}
-		
 	}
 }
 public class WallsAndGates{

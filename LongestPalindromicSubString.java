@@ -90,7 +90,7 @@ public class LongestPalindromicSubString {
 		String res = longestPalindromicSubstring("agbdba");
 		System.out.println(res);
 		
-		String res1 = longestPalindromicSubstringDP("a");
+		String res1 = longestPalindromicSubstringDP("agbdba");
 		System.out.println(res1);
 
 	}

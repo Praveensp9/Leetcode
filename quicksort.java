@@ -50,7 +50,7 @@ public class quicksort {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int[] arr = new int[] {64,25,12,22,11};
+		int[] arr = new int[] {18,33,-45,1,12,45,4,2,-3};
 		quick_sort(arr,0,arr.length-1);
 		printarray(arr);
 		

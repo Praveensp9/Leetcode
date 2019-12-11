@@ -56,15 +56,9 @@ public class ShortestDistanceInAMatrixFromAllBuildings {
     }
 
     static int solve(int left, int W, int H, int row, int col,int[][] grid) {
-        if(left == 0) {
-        	for(int i = 0; i < W; i++) {
-                for(int j = 0; j < H; j++)
-               	 System.out.print(grid[i][j] + " ");
-       	 	 System.out.println();
-       	 }
-        	System.out.println();
+        if(left == 0)
             return bfs(W,H,grid);
-        }
+        
         int r = row,c=col;
         if(col >= H) {
             r += col/H;

@@ -16,10 +16,27 @@ public class MaximumSumOfNonAdjancentElements {
 		
 		return incl;
 	}
+	
+	private static int maxSumDynamicProgramming(int[] arr) {
+		
+		 	int n = arr.length;
+	        int[] dp = new int[100005];
+	        dp[0] = Math.max(0, arr[0]);
+	        if(n == 1)
+	            return dp[0];
+	        dp[1] = Math.max(dp[0],arr[1]);
+	        for(int i=2;i<n;i++) {
+	            dp[i] = Math.max(dp[i-2], Math.max(dp[i-1],dp[i-2]+arr[i]));
+	        }
+	        
+	        return Math.max(dp[n-2],dp[n-1]);
+
+		
+	}
 
 	public static void main(String[] args) {
 		
-		int[] arr = new int[] {1,0,3,9,2};
+		int[] arr = new int[] {1,6,3,9,2};
 		int ans = maxSum(arr);
 		System.out.println(ans);
 		

@@ -3,15 +3,19 @@ package leetcode;
 public class MostDistantBetweenTwoBinsMicroSoft {
 	
 	private static int[] distant(int[] arr) {
+		
 		int n = arr.length;
 		int mid = n/2;
+		
 		int l=0,r=0;
+		
 		if(n%2 == 0){
 			l=r= mid-1;
 		}
 		else{
 			l=r=mid;
 		}
+		
 		int left = arr[mid];
 		int right = arr[mid];
 		
@@ -31,7 +35,7 @@ public class MostDistantBetweenTwoBinsMicroSoft {
 	}
 
 	public static void main(String[] args) {
-		int[] res = distant(new int[] {9,7,31,2,3,1,6,3,1,9});
+		int[] res = distant(new int[] {2, 7, 3, 1, 3, 1, 6, 1, 8, 1, 2});
 		System.out.println(res[0]+" , "+res[1]);
 	}
 
