@@ -52,15 +52,18 @@ public class kthSmallestElementInaBST {
 	
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(5);
-		 PriorityQueue<Integer> pq = new PriorityQueue<Integer>(
-		            new Comparator<Integer> () {
-		            public int compare(Integer a, Integer b) {
-		               return b - a;
-		            }
-		          }  
-		        );
-		kthSmallestElement(root,pq,3);
-		System.out.println(pq.poll());
+		
+//		 PriorityQueue<Integer> pq = new PriorityQueue<Integer>(
+//		            new Comparator<Integer> () {
+//		            public int compare(Integer a, Integer b) {
+//		               return b - a;
+//		            }
+//		          }  
+//		        );
+//		kthSmallestElement(root,pq,3);
+//		System.out.println(pq.poll());
+		
+		
 		kthsmallestIterative(root,4);
 	}
 

@@ -36,8 +36,13 @@ public class LC993_CousinsBinaryTree {
 		
 	private static boolean isCousins(TreeNode root, int x, int y) {
 		
-		
-		
+		 if(root == null)
+	            return false;
+        
+        if(root.val == x || root.val == y )
+            return false;
+        
+        cousins(root,x,y,0,null);
 		
 		if(lx == ly && px != py)
 			return true;

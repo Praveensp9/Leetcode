@@ -53,6 +53,22 @@ public class FlatternALinkedListSinglyAndDoubly {
 		return head;
 	}
 	private static SinglyNode flattensinglyLinkedList(SinglyNode head) {
+		SinglyNode p = head;
+		
+		while(p!= null) {
+			if(p.child == null) {
+				p = p.next;
+				continue;
+			}
+			
+			SinglyNode temp = p.child;
+			while(temp.next != null)
+				temp = temp.next;
+			temp.next = p.next;
+			p.next = p.child;
+			p.child = null;
+			
+		}
 		
 		return head;
 	}
